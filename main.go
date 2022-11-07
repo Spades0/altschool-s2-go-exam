@@ -37,9 +37,9 @@ type product struct {
 }
 
 type store struct {
-	productList []struct {
-		product
-	}
+	// productList []struct {
+	// 	product
+	// }
 	products     []string
 	soldProducts []string
 	totalSales   int
@@ -114,7 +114,7 @@ func (s *store) showSales() {
 	for _, value := range s.soldProducts {
 		fmt.Printf("%v\n", value)
 	}
-	fmt.Printf("The total sale is: $%v", s.totalSales)
+	fmt.Printf("The total sale is: $%v\n", s.totalSales)
 }
 
 func main() {
@@ -135,19 +135,19 @@ func main() {
 	Car2.quantity = 4
 
 	Car2.showProduct()
-	// Car2.showQuantity()
-	// Car2.showPrice()
+	Car2.showQuantity()
+	Car2.showPrice()
 
 	altSchoolStore := new(store)
-	// altSchoolStore.addItem(*Car1)
+
+	altSchoolStore.addItem(*Car1)
 	altSchoolStore.addItem(*Car2)
 	// altSchoolStore.showInventoryOfStock()
-	// altSchoolStore.sellItem(Car2)
-	// altSchoolStore.sellItem(Car2)
-	// altSchoolStore.sellItem(Car1)
-	// altSchoolStore.showSales()
-	// Car1.start()
-	// Car1.accelerate()
-	// Car1.stop()
+	altSchoolStore.sellItem(Car2)
+	altSchoolStore.sellItem(Car1)
+	altSchoolStore.showSales()
+	Car1.start()
+	Car1.accelerate()
+	Car1.stop()
 
 }
